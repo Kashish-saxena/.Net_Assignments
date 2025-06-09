@@ -60,7 +60,7 @@ class Calculator
                 }
                 else
                 {
-                    Console.WriteLine("Divident cannot be zero");
+                    Console.WriteLine("Divisor cannot be zero");
                 }
                 break;
             default:

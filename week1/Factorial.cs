@@ -4,7 +4,7 @@ class Factorial
     {
         try
         {
-            Console.Write("Enter a number to find it's factorial");
+            Console.Write("Enter a number to find it's factorial: ");
             string input = Console.ReadLine() ?? "";
             int num = int.Parse(input);
             double fact = factorial(num);
@@ -14,7 +14,6 @@ class Factorial
         {
             Console.WriteLine("Exception occured:" + e.Message);
         }
-        Console.ReadLine();
     }
 
     private static double factorial(double num)
