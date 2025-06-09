@@ -8,33 +8,27 @@ class Calculator
     public void calculate()
     {
         bool running = true;
-        try
+        do
         {
-            do
+            double num1 = GetValidDouble("Enter 1st number: ");
+            double num2 = GetValidDouble("Enter 2nd number: ");
+
+            try
             {
-                Console.WriteLine("Enter 1st number: ");
-                string num1 = Console.ReadLine() ?? "";
-                Console.WriteLine("Enter 2nd number: ");
-                string num2 = Console.ReadLine() ?? "";
-                double result = Operation(double.Parse(num1), double.Parse(num2));
+                double result = Operation(num1, num2);
                 Console.WriteLine("Result is: " + result);
-                Console.WriteLine("Do you want to continue? Y/N");
-                string userChoice = Console.ReadLine() ?? "";
-                userChoice = userChoice.ToLower();
-                if (userChoice == "y" || userChoice == "yes")
-                {
-                    running = true;
-                }
-                else
-                {
-                    running = false;
-                }
-            } while (running);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e.Message);
-        }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error during operation: " + e.Message);
+            }
+
+            Console.Write("Do you want to continue? Y/N: ");
+            string userChoice = (Console.ReadLine() ?? "").Trim().ToLower();
+
+            running = userChoice == "y" || userChoice == "yes";
+
+        } while (running);
     }
 
     private static double Operation(double num1, double num2)
@@ -68,6 +62,25 @@ class Calculator
                 break;
         }
         return result;
+    }
+
+    static double GetValidDouble(string prompt)
+    {
+        while (true)
+        {
+            Console.Write(prompt);
+            string input = Console.ReadLine() ?? "";
+
+            try
+            {
+                double value = Double.Parse(input);
+                return value;
+            }
+            catch
+            {
+                Console.WriteLine("Invalid input. Please enter a valid number.");
+            }
+        }
     }
 }
 

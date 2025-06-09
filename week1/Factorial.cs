@@ -4,9 +4,7 @@ class Factorial
     {
         try
         {
-            Console.Write("Enter a number to find it's factorial: ");
-            string input = Console.ReadLine() ?? "";
-            int num = int.Parse(input);
+            int num = GetValidInt("Enter a number to find it's factorial: ");
             double fact = factorial(num);
             Console.WriteLine("Factorial of " + num + " is: " + fact);
         }
@@ -23,5 +21,30 @@ class Factorial
             return 1;
         }
         return (double)(num * factorial(num - 1));
+    }
+
+    static int GetValidInt(string prompt)
+    {
+        while (true)
+        {
+            Console.Write(prompt);
+            string input = Console.ReadLine() ?? "";
+
+
+            try
+            {
+                int value = int.Parse(input);
+                if (value < 0)
+                {
+                    Console.WriteLine("Please enter a non-negative integer.");
+                    continue;
+                }
+                return value;
+            }
+            catch
+            {
+                Console.WriteLine("Invalid input. Please enter a valid number.");
+            }
+        }
     }
 }

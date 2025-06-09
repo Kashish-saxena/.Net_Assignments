@@ -26,3 +26,4 @@
 /Users/kashishsaxena/Documents/C#_.Net/Assignment/obj/Debug/net9.0/Calculator.pdb
 /Users/kashishsaxena/Documents/C#_.Net/Assignment/obj/Debug/net9.0/Calculator.genruntimeconfig.cache
 /Users/kashishsaxena/Documents/C#_.Net/Assignment/obj/Debug/net9.0/ref/Calculator.dll
+/Users/kashishsaxena/Documents/C#_.Net/Assignment/obj/Debug/net9.0/Calculator.sourcelink.json
