@@ -3,7 +3,7 @@ class Program
     public static void Main(String[] args)
     {
         Console.WriteLine(
-            "Choose an option to start running a program:\n1. Factorial\n2. Calculator\n3. Menu Driven Program\n4. Class Hierarchy\n5. Payment Gateway\n6. Employee Manager\n7. Exit "
+            "Choose an option to start running a program:\n1. Factorial\n2. Calculator\n3. Menu Driven Program\n4. Class Hierarchy\n5. Payment Gateway\n6. Employee Manager\n7. Contact Management \n8. LinQ Queries On Employee \n9. IComparerQuery \n10. Exit "
         );
         string userInput = Console.ReadLine() ?? "";
         switch (userInput)
@@ -55,6 +55,18 @@ class Program
                 empApp.GetUserInput();
                 break;
             case "7":
+                ContactManagement contactManagement = new ContactManagement();
+                contactManagement.getUserInput();
+                break;
+            case "8":
+                LinqQueriesOnEmployee linqQueries = new LinqQueriesOnEmployee();
+                linqQueries.ApplyLinqQueriesOnEmployee();
+                break;
+            case "9":
+                IComparerQuery comparerQuery = new IComparerQuery();
+                comparerQuery.ApplyLinqQueriesOnEmployee();
+                break;
+            case "10":
                 break;
             default:
                 Console.WriteLine("Invalid Input");
