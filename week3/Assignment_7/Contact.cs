@@ -8,9 +8,4 @@ public class Contact
         Name = name;
         PhoneNumber = phoneNumber;
     }
-
-    public override string ToString()
-    {
-        return $"Name: {Name}, Phone: {PhoneNumber},";
-    }
 }
